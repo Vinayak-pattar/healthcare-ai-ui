@@ -263,15 +263,62 @@ export default function Sidebar({ collapsed, onToggle }) {
       </div>
 
       {/* DOCTOR PROFILE MINI CARD */}
-      <div className="border-t border-slate-800 pt-6 mt-8">
-        <div className={`flex items-center gap-3 p-4 rounded-3xl ${collapsed ? 'justify-center' : ''} bg-slate-800 hover:bg-slate-700 transition cursor-pointer`}>
-          <UserCircle size={40} className="text-cyan-400 flex-shrink-0" />
-          {!collapsed && <div>
-            <p className="text-sm font-semibold text-white">Dr. Sharma</p>
-            <p className="text-xs text-slate-400">Cardiologist</p>
-          </div>}
-        </div>
+      {/* DOCTOR PROFILE */}
+
+<div className="border-t border-slate-800 pt-6 mt-8">
+
+  <div
+    className={`
+    flex
+    items-center
+    gap-3
+    p-4
+    rounded-3xl
+    bg-slate-800
+    hover:bg-slate-700
+    transition
+    ${collapsed ? "justify-center" : ""}
+    `}
+  >
+    <UserCircle
+      size={40}
+      className="text-cyan-400"
+    />
+
+    {!collapsed && (
+      <div>
+        <p className="font-semibold">
+          Dr. Sharma
+        </p>
+
+        <p className="text-xs text-slate-400">
+          Cardiologist
+        </p>
       </div>
+    )}
+  </div>
+
+  <button
+    onClick={() => {
+      localStorage.removeItem("role");
+      window.location.href = "/";
+    }}
+    className="
+      w-full
+      mt-4
+      bg-red-500
+      hover:bg-red-600
+      text-white
+      rounded-2xl
+      py-3
+      font-semibold
+      transition-all
+    "
+  >
+    Logout
+  </button>
+
+</div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { Mail, Phone } from "lucide-react";
 import PageShell from "../components/layout/PageShell";
 import { patients } from "../data/mockData";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   const patientsHandledToday = patients.length;
@@ -35,9 +36,11 @@ export default function Profile() {
             </div>
             <p className="mt-2 text-xl text-slate-500">Senior Cardiologist</p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <button className="rounded-3xl bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800">
-                Edit Profile
-              </button>
+              <Link to="/edit-profile">
+  <button className="rounded-3xl bg-slate-950 px-5 py-2.5 text-sm font-semibold text-white">
+    Edit Profile
+  </button>
+</Link>
               <a
                 href="mailto:drsharma@mediassist.com"
                 className="inline-flex items-center gap-2 rounded-3xl bg-slate-100 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-200"

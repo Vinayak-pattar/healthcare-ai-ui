@@ -17,9 +17,9 @@ export default function LandingPage() {
           MediAssist
         </h1>
 
-        <Link to="/dashboard">
+        <Link to="/role">
           <button className="rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-400 px-6 py-3 shadow-lg transition-all duration-300 hover:scale-105">
-            Open Dashboard
+            Sign In
           </button>
         </Link>
       </nav>
@@ -52,15 +52,17 @@ export default function LandingPage() {
 
           <div className="mt-10 flex gap-6">
 
-            <Link to="/dashboard">
+            <Link to="/role">
               <button className="rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-400 px-8 py-4 text-lg font-semibold shadow-xl transition-all hover:scale-105">
-                Launch Dashboard
+                Log In
               </button>
             </Link>
 
-            <button className="rounded-2xl border border-white/20 bg-white/5 px-8 py-4 text-lg transition-all hover:bg-white/10">
-              Learn More
-            </button>
+            <Link to="/about">
+              <button className="rounded-2xl border border-white/20 bg-white/5 px-8 py-4 text-lg transition-all hover:bg-white/10">
+                Learn More
+              </button>
+            </Link>
 
           </div>
 

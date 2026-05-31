@@ -8,13 +8,23 @@ import {
 
 import Sidebar from "./Sidebar"
 
-export default function Layout({ children }) {
+export default function Layout({
+  children,
+  darkMode = false,
+}) {
+  console.log("Layout Dark Mode:", darkMode);
 
   const [sidebarOpen, setSidebarOpen] = useState(true)
 
   return (
 
-    <div className="flex min-h-screen bg-[#0F172A]">
+    <div
+  className={`
+    flex
+    min-h-screen
+    ${darkMode ? "bg-slate-950" : "bg-[#0F172A]"}
+  `}
+>
 
       {/* Sidebar */}
 
@@ -31,7 +41,21 @@ export default function Layout({ children }) {
 
       {/* Main Content */}
 
-      <div className="flex-1 bg-[#F1F5F9] p-8 rounded-l-[40px] overflow-y-auto">
+      <div
+  className={`
+    flex-1
+    p-8
+    rounded-l-[40px]
+    overflow-y-auto
+    transition-all
+    duration-300
+    ${
+      darkMode
+        ? "bg-slate-900 text-white"
+        : "bg-[#F1F5F9] text-slate-900"
+    }
+  `}
+>
 
         {/* Top Navbar */}
 
